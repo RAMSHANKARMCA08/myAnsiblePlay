@@ -1,0 +1,12 @@
+---
+- hosts: myClientsGrp
+  become: true
+  tasks:  
+  - name: Install List of Softwares
+    yum:
+      name: "{{ packages }}"
+    vars:
+      packages:
+      - httpd
+      - tree
+      - git

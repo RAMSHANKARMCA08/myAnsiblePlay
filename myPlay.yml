@@ -1,0 +1,14 @@
+---
+- hosts: myClientsGrp
+  become: true
+  tasks:  
+  - name: Install Apache Webserver
+    yum: pkg=httpd state=latest
+  - name: Install git
+    yum: pkg=git state=absent
+  - name: Install java
+    yum: pkg=java-11-openjdk-devel
+  - name: Install git
+    yum: pkg=git
+  - name: Install tree
+    yum: pkg=tree

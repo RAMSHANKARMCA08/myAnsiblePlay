@@ -1,0 +1,13 @@
+---
+- hosts: myClientsGrp
+  become: true
+  tasks:  
+  - name: Gather details
+    shell: hostname
+    register: myClientName
+  - name: Print Hostname
+    debug:
+      var: myClientName.stdout 
+  - name: Print msg
+    debug:
+      msg: This msg is printed by Leo {{ myClientName.stdout }}

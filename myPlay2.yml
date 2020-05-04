@@ -1,0 +1,11 @@
+---
+- hosts: myClientsGrp
+  become: true
+  tasks:  
+  - name: Install softwares 
+    yum: 
+      name:
+        - git
+        - tree
+        - httpd
+        - java-11-openjdk-devel
